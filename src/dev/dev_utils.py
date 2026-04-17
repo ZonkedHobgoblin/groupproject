@@ -1,0 +1,24 @@
+import logging
+from logging.handlers import RotatingFileHandler
+
+class LoggerSetup:
+    @staticmethod
+    def initialize():
+        """
+        Set up the logger for usage in logging over prints
+        Logs to mediafetch.log in same dir as .py
+        Is rotating (At 100kb size on new creation)
+        """
+        handler = RotatingFileHandler(
+            "venatormali.log", 
+            maxBytes=10**5,
+            backupCount=3
+            )
+        
+        logging.basicConfig(
+            level=logging.DEBUG,
+            format="%(asctime)s - %(levelname)s - %(message)s",
+            handlers=[handler]
+        )
+        logger = logging.getLogger(__name__)
+        logger.info("Logger initialized")
