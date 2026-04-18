@@ -1,3 +1,7 @@
+"""
+constants.py - 18/04/26
+Contains global constants and environment information
+"""
 import platform
 from pathlib import Path
 

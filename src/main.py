@@ -1,3 +1,8 @@
+"""
+main.py - 18/04/26
+Initializes the logger system, then starts the game, then exits once game script ends
+Catches exceptions, logs them and quits the script
+"""
 import logging
 import sys
 from game.GameManager import VenatorMaliGame

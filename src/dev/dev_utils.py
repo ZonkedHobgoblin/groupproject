@@ -1,3 +1,7 @@
+"""
+dev_utils.py - 17/04/26
+Setup for logging system
+"""
 import logging
 from logging.handlers import RotatingFileHandler
 
@@ -6,7 +10,7 @@ class LoggerSetup:
     def initialize():
         """
         Set up the logger for usage in logging over prints
-        Logs to venatormali.log in same dir as .py
+        Logs to venatormali.log in same dir as main.py
         Is rotating (At 100kb size on new creation)
         """
         handler = RotatingFileHandler(
