@@ -59,10 +59,6 @@ class VenatorMaliGame:
                 
                 self.input_manager.process_event(event)
             
-            if self.input_manager.is_pressed("pause"):
-                self.running = False
-                break
-            
             # Temp
             self.draw()
             
