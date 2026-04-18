@@ -33,3 +33,26 @@ class InputManager:
         for action in self.bindings:
             self.pressed[action] = False
             self.released[action] = False
+            
+    def process_event(self, event: pygame.event.Event):
+        """
+        Updates bind states from passed events by GM
+        """
+        if event.type == pygame.KEYDOWN:
+            for action, key in self.bindings.items:
+                if event.key == key:
+                    self.pressed[action] = True
+                    self.held[action] = True
+                    
+        elif event.type == pygame.KEYUP:
+            for action, key in self.bindings.items:
+                if event.key == key:
+                    self.held[action] = False
+                    self.released[action] = True
+                    
+    # util functions
+    def is_pressed(self, action: str) -> bool:
+        return self.pressed.get(action, False)
+    
+    def is_held(self, action: str) -> bool:
+        return self.held.get(action, False)
