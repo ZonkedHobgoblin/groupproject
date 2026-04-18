@@ -10,6 +10,8 @@ if __name__ == "__main__":
         game = VenatorMaliGame()
         logger.info("Starting game")
         game.start()
+        logger.info("Quiting game")
+        raise SystemExit
         
     except Exception:
         logger = logging.getLogger(__name__)
