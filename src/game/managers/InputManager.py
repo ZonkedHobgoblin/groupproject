@@ -23,3 +23,13 @@ class InputManager:
         self.pressed = {action: False for action in self.bindings}
         self.held = {action: False for action in self.bindings}
         self.released = {action: False for action in self.bindings}
+    
+    
+    def update_start_frame(self):
+        """
+        We call this at the start of each frame
+        Basically clears all the inputs that last 1 frame (so not the held input)
+        """
+        for action in self.bindings:
+            self.pressed[action] = False
+            self.released[action] = False
